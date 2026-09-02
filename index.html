@@ -3,34 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PW Vision</title>
+  <title>PW Vision | Welcome</title>
   <style>
     * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #111827, #2563eb);
-      color: white;
-    }
-    .card {
-      text-align: center;
-      padding: 50px 70px;
-      border-radius: 24px;
-      background: rgba(255,255,255,.12);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 20px 50px rgba(0,0,0,.25);
-    }
-    h1 { font-size: 64px; margin: 0 0 12px; }
-    p { font-size: 20px; margin: 0; opacity: .9; }
+    body { margin:0; min-height:100vh; display:grid; place-items:center; font-family:Arial,Helvetica,sans-serif; background:linear-gradient(135deg,#0f172a,#1e3a8a,#2563eb); color:#fff; }
+    .card { width:min(420px,92vw); padding:38px; border:1px solid rgba(255,255,255,.2); border-radius:24px; background:rgba(255,255,255,.1); backdrop-filter:blur(16px); box-shadow:0 25px 70px rgba(0,0,0,.3); }
+    .logo { width:64px; height:64px; margin:0 auto 18px; display:grid; place-items:center; border-radius:18px; background:#fff; color:#2563eb; font-size:25px; font-weight:800; }
+    h1 { text-align:center; margin:0 0 8px; font-size:30px; } .subtitle { text-align:center; margin:0 0 28px; color:#dbeafe; }
+    label { display:block; margin:14px 0 7px; font-size:14px; } input { width:100%; padding:13px 14px; border:1px solid rgba(255,255,255,.25); border-radius:12px; outline:none; background:rgba(255,255,255,.12); color:#fff; font-size:15px; } input::placeholder { color:#bfdbfe; } input:focus { border-color:#fff; }
+    button { width:100%; margin-top:22px; padding:14px; border:0; border-radius:12px; background:#fff; color:#1d4ed8; font-weight:700; font-size:16px; cursor:pointer; } button:hover { transform:translateY(-1px); }
+    #message { min-height:20px; margin-top:15px; text-align:center; color:#bfdbfe; font-size:14px; } .welcome { display:none; text-align:center; }
   </style>
 </head>
 <body>
   <main class="card">
-    <h1>Hello 👋</h1>
-    <p>Welcome to PW Vision</p>
+    <section id="login">
+      <div class="logo">PW</div><h1>Welcome to PW Vision</h1><p class="subtitle">Sign in to continue</p>
+      <form id="loginForm">
+        <label for="email">Email</label><input id="email" type="email" placeholder="you@example.com" required>
+        <label for="password">Password</label><input id="password" type="password" placeholder="Enter your password" required minlength="4">
+        <button type="submit">Login</button><div id="message"></div>
+      </form>
+    </section>
+    <section id="welcome" class="welcome">
+      <div class="logo">✓</div><h2>Welcome!</h2><p>You have successfully signed in to PW Vision.</p><button type="button" onclick="location.reload()">Back to Login</button>
+    </section>
   </main>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) { e.preventDefault(); document.getElementById('login').style.display='none'; document.getElementById('welcome').style.display='block'; });
+  </script>
 </body>
 </html>
