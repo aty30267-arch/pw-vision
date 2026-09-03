@@ -1,36 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PW Vision | Welcome</title>
-  <style>
-    * { box-sizing: border-box; }
-    body { margin:0; min-height:100vh; display:grid; place-items:center; font-family:Arial,Helvetica,sans-serif; background:linear-gradient(135deg,#0f172a,#1e3a8a,#2563eb); color:#fff; }
-    .card { width:min(420px,92vw); padding:38px; border:1px solid rgba(255,255,255,.2); border-radius:24px; background:rgba(255,255,255,.1); backdrop-filter:blur(16px); box-shadow:0 25px 70px rgba(0,0,0,.3); }
-    .logo { width:64px; height:64px; margin:0 auto 18px; display:grid; place-items:center; border-radius:18px; background:#fff; color:#2563eb; font-size:25px; font-weight:800; }
-    h1 { text-align:center; margin:0 0 8px; font-size:30px; } .subtitle { text-align:center; margin:0 0 28px; color:#dbeafe; }
-    label { display:block; margin:14px 0 7px; font-size:14px; } input { width:100%; padding:13px 14px; border:1px solid rgba(255,255,255,.25); border-radius:12px; outline:none; background:rgba(255,255,255,.12); color:#fff; font-size:15px; } input::placeholder { color:#bfdbfe; } input:focus { border-color:#fff; }
-    button { width:100%; margin-top:22px; padding:14px; border:0; border-radius:12px; background:#fff; color:#1d4ed8; font-weight:700; font-size:16px; cursor:pointer; } button:hover { transform:translateY(-1px); }
-    #message { min-height:20px; margin-top:15px; text-align:center; color:#bfdbfe; font-size:14px; } .welcome { display:none; text-align:center; }
-  </style>
-</head>
-<body>
-  <main class="card">
-    <section id="login">
-      <div class="logo">PW</div><h1>Welcome to PW Vision</h1><p class="subtitle">Sign in to continue</p>
-      <form id="loginForm">
-        <label for="email">Email</label><input id="email" type="email" placeholder="you@example.com" required>
-        <label for="password">Password</label><input id="password" type="password" placeholder="Enter your password" required minlength="4">
-        <button type="submit">Login</button><div id="message"></div>
-      </form>
-    </section>
-    <section id="welcome" class="welcome">
-      <div class="logo">✓</div><h2>Welcome!</h2><p>You have successfully signed in to PW Vision.</p><button type="button" onclick="location.reload()">Back to Login</button>
-    </section>
-  </main>
-  <script>
-    document.getElementById('loginForm').addEventListener('submit', function(e) { e.preventDefault(); document.getElementById('login').style.display='none'; document.getElementById('welcome').style.display='block'; });
-  </script>
-</body>
-</html>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>PW Vision | Welcome</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;font-family:Arial,sans-serif;background:linear-gradient(135deg,#0f172a,#1e3a8a,#2563eb);color:#fff;overflow:hidden;position:relative}
+.hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}.heart{position:absolute;top:-50px;color:#ff6b9a;font-size:20px;opacity:.85;animation:fall linear infinite;filter:drop-shadow(0 0 7px rgba(255,105,150,.45))}.heart:nth-child(1){left:5%;font-size:18px;animation-duration:7s;animation-delay:-2s}.heart:nth-child(2){left:14%;font-size:28px;animation-duration:10s;animation-delay:-6s}.heart:nth-child(3){left:24%;font-size:16px;animation-duration:6s;animation-delay:-4s}.heart:nth-child(4){left:35%;font-size:25px;animation-duration:9s;animation-delay:-7s}.heart:nth-child(5){left:47%;font-size:19px;animation-duration:8s;animation-delay:-1s}.heart:nth-child(6){left:58%;font-size:30px;animation-duration:11s;animation-delay:-8s}.heart:nth-child(7){left:69%;font-size:17px;animation-duration:7s;animation-delay:-5s}.heart:nth-child(8){left:78%;font-size:26px;animation-duration:9s;animation-delay:-3s}.heart:nth-child(9){left:88%;font-size:20px;animation-duration:6.5s;animation-delay:-2s}.heart:nth-child(10){left:96%;font-size:24px;animation-duration:10s;animation-delay:-7s}
+@keyframes fall{0%{transform:translate3d(0,-60px,0) rotate(0);opacity:0}10%{opacity:.85}50%{transform:translate3d(45px,55vh,0) rotate(180deg)}90%{opacity:.75}100%{transform:translate3d(-35px,115vh,0) rotate(360deg);opacity:0}}
+.card{position:relative;z-index:2;width:min(420px,92vw);padding:38px;border:1px solid rgba(255,255,255,.2);border-radius:24px;background:rgba(255,255,255,.1);backdrop-filter:blur(16px);box-shadow:0 25px 70px rgba(0,0,0,.3)}.logo{width:64px;height:64px;margin:0 auto 18px;display:grid;place-items:center;border-radius:18px;background:#fff;color:#2563eb;font-size:25px;font-weight:800}h1{text-align:center;margin:0 0 8px;font-size:30px}.subtitle{text-align:center;margin:0 0 28px;color:#dbeafe}label{display:block;margin:14px 0 7px;font-size:14px}input{width:100%;padding:13px 14px;border:1px solid rgba(255,255,255,.25);border-radius:12px;outline:none;background:rgba(255,255,255,.12);color:#fff;font-size:15px}input::placeholder{color:#bfdbfe}input:focus{border-color:#fff}button{width:100%;margin-top:22px;padding:14px;border:0;border-radius:12px;background:#fff;color:#1d4ed8;font-weight:700;font-size:16px;cursor:pointer;transition:.2s}button:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(255,255,255,.18)}#message{min-height:20px;margin-top:15px;text-align:center;color:#bfdbfe;font-size:14px}.welcome{display:none;text-align:center}
+</style></head><body>
+<div class="hearts" aria-hidden="true"><span class="heart">♥</span><span class="heart">♥</span><span class="heart">♥</span><span class="heart">♥</span><span class="heart">♥</span><span class="heart">♥</span><span class="heart">♥</span><span class="heart">♥</span><span class="heart">♥</span><span class="heart">♥</span></div>
+<main class="card"><section id="login"><div class="logo">PW</div><h1>Welcome to PW Vision</h1><p class="subtitle">Sign in to continue</p><form id="loginForm"><label for="email">Email</label><input id="email" type="email" placeholder="you@example.com" required><label for="password">Password</label><input id="password" type="password" placeholder="Enter your password" required minlength="4"><button type="submit">Login</button><div id="message"></div></form></section><section id="welcome" class="welcome"><div class="logo">✓</div><h2>Welcome!</h2><p>You have successfully signed in to PW Vision.</p><button type="button" onclick="location.reload()">Back to Login</button></section></main>
+<script>document.getElementById('loginForm').addEventListener('submit',function(e){e.preventDefault();document.getElementById('login').style.display='none';document.getElementById('welcome').style.display='block'});</script>
+</body></html>
